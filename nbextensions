@@ -1,0 +1,5 @@
+
+
+c.NotebookApp.nbserver_extensions = {"nbextensions": True}
+c.NotebookApp.extra_template_paths = [os.path.join(jupyter_data_dir(), 'templates') ]
+c.NotebookApp.server_extensions = ['nbextensions']
