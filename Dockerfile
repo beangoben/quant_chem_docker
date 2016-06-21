@@ -13,6 +13,7 @@ USER jovyan
 # Chemioinformatics packages
 RUN conda install -n python2 -c rdkit rdkit=2016.03.1 --quiet --yes
 RUN conda install -n python2 -c omnia openbabel=2015.09 --quiet --yes
+RUN conda install -n python2 anaconda-nb-extensions -c anaconda-nb-extensions --quiet --yes
 RUN pip2 install cclib
 RUN pip2 install gpy
 RUN pip2 install https://github.com/rpmuller/pyquante2/zipball/master
@@ -28,6 +29,7 @@ RUN mv body.html /opt/conda/envs/python2/lib/python2.7/site-packages/py3dmol/
 #Python 3
 RUN conda install -c rdkit rdkit=2016.03.1 --quiet --yes
 RUN conda install -c omnia openbabel=2015.09 --quiet --yes
+RUN conda install anaconda-nb-extensions -c anaconda-nb-extensions --quiet --yes
 RUN pip3 install cclib
 RUN pip3 install gpy
 RUN pip3 install https://github.com/rpmuller/pyquante2/zipball/master
@@ -60,16 +62,11 @@ COPY test /home/jovyan/
 #RUN jupyter nbextension install /home/jovyan/.local/share/jupyter/nbextensions/usability/ruler/main
 #RUN jupyter nbextension list
 
-# install gaussian process
-pip2 install gpy
-pip3 install gpy
-conda install anaconda-nb-extensions -c anaconda-nb-extensions
-
-pip install https://github.com/ipython-contrib/IPython-notebook-extensions/archive/master.zip --user
+RUN pip install https://github.com/ipython-contrib/IPython-notebook-extensions/archive/master.zip
 
 
 USER jovyan
 
 RUN pip install psutil
-pip install https://github.com/ipython-contrib/IPython-notebook-extensions/archive/master.zip --user
+RUN pip install https://github.com/ipython-contrib/IPython-notebook-extensions/archive/master.zip
 
