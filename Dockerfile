@@ -60,4 +60,9 @@ COPY test /home/jovyan/
 #RUN jupyter nbextension install /home/jovyan/.local/share/jupyter/nbextensions/usability/ruler/main
 #RUN jupyter nbextension list
 
+# install gaussian process
+pip2 install gpy
+pip3 install gpy
+
+
 USER jovyan
