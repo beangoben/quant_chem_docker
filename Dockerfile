@@ -47,7 +47,7 @@ COPY custom /home/jovyan/.jupyter/custom
 # copy test files
 COPY test /home/jovyan/
 
-#RUN pip install psutil
+
 #RUN git clone https://github.com/ipython-contrib/IPython-notebook-extensions
 #RUN cd IPython-notebook-extensions && python setup.py install
 #RUN cd IPython-notebook-extensions && python configure_nbextensions.py debug
@@ -63,6 +63,13 @@ COPY test /home/jovyan/
 # install gaussian process
 pip2 install gpy
 pip3 install gpy
+conda install anaconda-nb-extensions -c anaconda-nb-extensions
+
+pip install https://github.com/ipython-contrib/IPython-notebook-extensions/archive/master.zip --user
 
 
 USER jovyan
+
+RUN pip install psutil
+pip install https://github.com/ipython-contrib/IPython-notebook-extensions/archive/master.zip --user
+
