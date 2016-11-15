@@ -1,7 +1,5 @@
 # Docker repo for Quantum Chemistry
-
-
-t's included?
+## What's included?
 
 Docker files to test-out basic cheminformatics and quantum chemistry.
 
@@ -13,7 +11,6 @@ The docker image is based off of <https://github.com/beangoben/pimp_jupyter>, a 
 - 3dmoljs and imolecule for visualization
 - cclib
 
-**Don't forget to read the license and cite the work!** (Check original githubs for more info)
 
 ## How to use/build
 
@@ -25,6 +22,7 @@ To download running the following command in your favorite terminal:
 
 ```
 docker pull beangoben/quant_chem_docker
+```
 
 of build it (good to change things) by moving to the git cloned repository :
 
